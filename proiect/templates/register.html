@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Montserrat&display=swap" rel="stylesheet">
+    <title>Login - Site</title>
+</head>
+<body class="register-page">
+    <header class="header text-center">
+        <h2 class="default-font">Create an account!</h2>
+        <h4 class="default-font">Your flight is waiting!</h4>
+    </header>
+    <div class="container signup-form-container">
+        <form class="container" method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="container">
+                        {{ form_user | crispy }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container">
+                        {{ form_address | crispy }}
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="text-center">
+                <input class="btn btn-md btn-success default-font" type="submit" value="Create my account!">
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer text-center footer">
+        <h4 class="default-font font-footer">Have a flight!</h4>
+        <h4 class="default-font font-footer">15th July 2020</h4>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
